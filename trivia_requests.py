@@ -25,6 +25,14 @@ def selected_individual_question(parse_json, selected_number):
     else:
         return parse_json[selected_number]
 
+def pop_random_questions(parse_json):
+    if len(parse_json) > 0:
+        popped_question = parse_json.pop()
+        return popped_question
+    else:
+        #maybe return the end game statistics template(flask html)
+        return "You have reached the end of the questions"
+
 if __name__ == '__main__':
     temp_value = send_request(5)
     print(temp_value)
